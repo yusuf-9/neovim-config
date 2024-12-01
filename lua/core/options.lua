@@ -23,16 +23,3 @@ local options = {
 for key, value in pairs(options) do
     vim.opt[key] = value
 end
-
--- Set transparent background
-vim.cmd [[
-highlight Normal guibg=NONE ctermbg=NONE
-highlight NonText guibg=NONE ctermbg=NONE
-highlight EndOfBuffer guibg=NONE ctermbg=NONE
-highlight VertSplit guibg=NONE ctermbg=NONE
-highlight StatusLine guibg=NONE ctermbg=NONE
-highlight StatusLineNC guibg=NONE ctermbg=NONE
-highlight Pmenu guibg=NONE ctermbg=NONE
-highlight PmenuSel guibg=NONE ctermbg=NONE
-highlight Search guibg=NONE ctermbg=NONE
-]]
