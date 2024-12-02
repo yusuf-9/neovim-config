@@ -10,13 +10,9 @@ map("n", "<Right>", "i", opts)
 
 -- key mapping for opening neo-tree with ctrl + e
 map("n", "<c-e>", ":Neotree toggle<cr>", opts)
--- sadassad
+
 -- key mapping for focusing neo-tree with ctrl + w
 map("n", "<c-w", ":Neotree focus toggle<cr>", opts)
-
-map('n', 'l', ':Neotree reveal<CR>', opts)
-
-map('n', 'h', ':Neotree close<CR>', opts)
 
 -- key mapping for toggling the neotree with ctrl + e when in insert mode
 map("i", "<C-e>", "<Esc>:Neotree toggle<CR>a", opts)
@@ -57,7 +53,10 @@ map("i", "<C-y>", "<Esc><C-R>a", opts)
 -- Map Ctrl + C to copy selected text
 map("v", "<C-c>", '"+y`>a', opts)
 
--- Map Ctrl + V to paste pasteselected text
+-- Map Ctrl + C to copy a line in insert mode
+map("i", "<C-c>", '<Esc>"+yyi', opts)
+
+-- Map Ctrl + V to paste paste selected text
 map("i", "<C-v>", '<Esc>"+pa', opts)
 
 -- Map Ctrl + shift + right to select text to the right
@@ -65,12 +64,6 @@ map("i", "<C-S-Right>", '<Esc>ve', opts)
 
 -- Map Ctrl + shift + left to select text to the right
 map("i", "<C-S-Left>", '<Esc>vb', opts)
-
--- Map Ctrl + Shift + Up to select lines upwards
-map("i", "<C-S-Up>", "<Esc>V<Up>o<Esc>", opts)
-
--- Map Ctrl + Shift + Down to select lines downwards
-map("i", "<C-S-Down>", "<Esc>V<Down>o<Esc>", opts)
 
 -- Map Backsapce to delete selected text in visual mode
 map("v", "<C-H>", 'di', opts)
@@ -102,5 +95,12 @@ map("i", "<S-Right>", "<Esc>v<Right>", opts)
 -- Map ctrl + s to save a file
 map('i', '<C-s>', '<Esc><cmd> w <CR>i', opts)
 
--- Map ctrl + s to close a file
+-- Map ctrl + q to close a file
 map('i', '<C-q>', '<Esc><cmd> q <CR>', opts)
+
+-- Keybindings that don't work
+-- map('n', 'l', ':Neotree reveal<CR>', opts)
+-- map('n', 'h', ':Neotree close<CR>', opts)
+-- map("i", "<C-S-Up>", '<Esc>"+yyo<Esc>ppi', opts)
+
+-- map("i", "<C-S-Down>", '<Esc>"+yyO<Esc>ppi', opts)
