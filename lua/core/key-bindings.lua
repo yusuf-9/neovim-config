@@ -102,5 +102,31 @@ map('i', '<C-q>', '<Esc><cmd> q <CR>', opts)
 -- map('n', 'l', ':Neotree reveal<CR>', opts)
 -- map('n', 'h', ':Neotree close<CR>', opts)
 -- map("i", "<C-S-Up>", '<Esc>"+yyo<Esc>ppi', opts)
-
 -- map("i", "<C-S-Down>", '<Esc>"+yyO<Esc>ppi', opts)
+
+-- TODOs: ---------------------------------------------------------------
+
+-- general bindings
+-- alt + up/down  to move lines up/down
+-- ctrl + enter to add a line below active line
+-- shift + alt + up/down to duplicate lines up/down
+-- ctrl + / to comment a line
+-- ctrl + space to open intellisense
+-- ctrl + click and f12 to go to function definition
+-- ctrl + d(n) for multi-cursor editing
+-- ctrl + f to search for a work and replace instances incrementally
+-- tab for indenting
+-- selection + tab for indenting selected text/lines
+-- shift + tab for out-denting
+
+-- buffer/file bindings
+    -- create bindings for -
+        -- switching buffers using ctrl + n/p
+        -- creating splits
+        -- navigating across splits
+        -- closing splits
+
+-- special bindings
+    -- ctrl + shift + f for global search
+    -- ctrl + j for opening the terminal
+    -- ctrl + shift + g for opening git stuff
