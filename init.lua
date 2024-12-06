@@ -29,5 +29,12 @@ require("lazy").setup({
     require("plugins.theme"),
     require("plugins.buffer-line"),
     require("plugins.lua-line"),
+    require("plugins.commenter"),
+    require("plugins.minimap"),
+    require("plugins.gitsigns"),
+    -- require("plugins.lsp"),
+    -- require("plugins.autocompletion"),
+    -- require("plugins.telescope"),
+    -- require("plugins.none-ls"),
 })
 

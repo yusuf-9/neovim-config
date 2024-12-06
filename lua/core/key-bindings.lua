@@ -26,6 +26,11 @@ map("i", "<C-A-Right>", "<Esc>$a", opts)
 -- Key mapping for moving ten lines down with Ctrl + Alt + Down Arrow
 map("i", "<C-A-Down>", "<Esc>10ji", opts)
 
+-- Key mapping to move line up/down using alt + up/down
+map("i", "<A-Up>", '<Esc>ddkPi', opts)
+
+map("i", "<A-Down>", '<Esc>ddpi', opts)
+
 -- Key mapping for moving ten lines up with Ctrl + Alt + Up Arrow
 map("i", "<C-A-Up>", "<Esc>10ki", opts)
 
@@ -98,33 +103,45 @@ map('i', '<C-s>', '<Esc><cmd> w <CR>i', opts)
 -- Map ctrl + q to close a file
 map('i', '<C-q>', '<Esc><cmd> q <CR>', opts)
 
+-- Map ctrl + / to comment/uncomment code
+map('i', '<C-_>', "<ESC><cmd>lua require('Comment.api').toggle.linewise.current()<CR>i", opts)
+
+map('v', '<C-_>', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>i", opts)
+
+-- Map ctrl + a to select all the text in a file
+map('i', '<C-a>', '<Esc>ggVG<CR>', opts)
+
+-- Map ctrl + n/p to navigate between prev/next buffer tabs
+map('i', '<C-n>', '<Esc>:BufferLineCycleNext<CR>i', opts)
+map('i', '<C-p>', '<Esc>:BufferLineCyclePrev<CR>i', opts)
+
+-- Map Alt + left to create a horizontal split
+map('i', '<C-\\>', '<Esc>:vsplit<CR>', opts)
+map('i', '<C-A-\\>', '<Esc>:split<CR>', opts)
+
+-- Map ctrl hjkl to navigate between splits
+map('n', '<C-h>', '<Esc><C-w>hi', opts)
+map('n', '<C-j>', '<Esc><C-w>ji', opts)
+map('n', '<C-k>', '<Esc><C-w>ki', opts)
+map('n', '<C-l>', '<Esc><C-w>li', opts)
+
 -- Keybindings that don't work
 -- map('n', 'l', ':Neotree reveal<CR>', opts)
 -- map('n', 'h', ':Neotree close<CR>', opts)
--- map("i", "<C-S-Up>", '<Esc>"+yyo<Esc>ppi', opts)
--- map("i", "<C-S-Down>", '<Esc>"+yyO<Esc>ppi', opts)
+-- map("i", "<C-x-Up>", '<Esc>"+yyo<Esc>ppi', opts)
+-- map("i", "<C-x-Down>", '<Esc>"+yyO<Esc>ppi', opts)
 
 -- TODOs: ---------------------------------------------------------------
 
+
 -- general bindings
--- alt + up/down  to move lines up/down
--- ctrl + enter to add a line below active line
+-- ctrl + enter to add a line below active line - substituted with ctrl + o
 -- shift + alt + up/down to duplicate lines up/down
--- ctrl + / to comment a line
 -- ctrl + space to open intellisense
 -- ctrl + click and f12 to go to function definition
 -- ctrl + d(n) for multi-cursor editing
 -- ctrl + f to search for a work and replace instances incrementally
--- tab for indenting
 -- selection + tab for indenting selected text/lines
--- shift + tab for out-denting
-
--- buffer/file bindings
-    -- create bindings for -
-        -- switching buffers using ctrl + n/p
-        -- creating splits
-        -- navigating across splits
-        -- closing splits
 
 -- special bindings
     -- ctrl + shift + f for global search
